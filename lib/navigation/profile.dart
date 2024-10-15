@@ -9,14 +9,38 @@ class Profile extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Perfil'),
       ),
-      body: const Center(
-        child: Text('Pantalla de perfil'),
-      ),
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.blue,
-        foregroundColor: Colors.amber,
-        onPressed: () => Navigator.pushReplacementNamed(context, '/home'),
-        child: Icon(Icons.home),
+      body: Padding(
+        padding: const EdgeInsets.all(32.0),
+        child: Column(
+          children: [
+            const Row(
+              children: [
+                CircleAvatar(
+                  backgroundColor: Colors.brown,
+                  foregroundColor: Colors.white,
+                  radius: 32,
+                  child: Text('AH'),
+                ),
+                SizedBox(
+                  width: 8,
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      '20213tn073@utez.edu.mx',
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    Text('Ivan Samuel Mata Nieto')
+                  ],
+                )
+              ],
+            ),
+            const Spacer(),
+            ElevatedButton(
+                onPressed: () {}, child: const Text('Cerrar session'))
+          ],
+        ),
       ),
     );
   }
